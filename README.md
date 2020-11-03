@@ -27,9 +27,16 @@ Things you may want to cover:
 
 |nickname|string|null :false|
 
-|mail_address|string|null :false|
+|email|string|null :false|
 
-|password|string|null :false|
+|encrypted_password|string|null :false|
+
+|name|string|null :false|
+
+|KANA_name|string|null :false|
+
+|birthday|string|null :false|
+
 
 ## items
 
@@ -39,11 +46,23 @@ Things you may want to cover:
 
 |prise|string|null :false|
 
+|seller|string|null :false|
+
+|product_condition|string|null :false|
+
+|delivery_fee|string|null :false|
+
+|shipment_source|string|null :false|
+
+|guideline|string|null :false|
+
+|user_id|string|null :false|
+
 ## lives
 
 |postal_code|string|null :false|
 
-|prefecturs|string|null :false|
+|prefecture_id|integer|null :false|
 
 |municipality|string|null :false|
 
@@ -51,9 +70,16 @@ Things you may want to cover:
 
 |phone_number|string|null :false|
 
+|building_name|string|
+
+|item_id|string|null :false|
+
 ## buys
 
-|time|string|null :false|
+|user_id|string|null :false|
+
+|item_id|string|null :false|
+
 
 
 
