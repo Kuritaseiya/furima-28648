@@ -46,7 +46,7 @@ has_many :items
 has_many :buys
 ## items
 
-|item_name|string|null :false|
+|name|string|null :false|
 
 |category_id|integer|null :false|
 
@@ -58,9 +58,9 @@ has_many :buys
 
 |delivery_fee_id|integer|null :false|
 
-|shipment_source_id|integer|null :false|
+|prefecture_id|integer|null :false|
 
-|guideline|string|null :false|
+|guideline_id|integer|null :false|
 
 |user|references|foreign_key :true|
 
@@ -82,7 +82,7 @@ has_one :buy
 
 |building_name|string|
 
-|item|references|foreign_key :true|
+|buy|references|foreign_key :true|
 
 belongs_to :buy
 
@@ -96,6 +96,7 @@ belongs_to :user
 
 belongs_to :item
 
+has_one :live
 
 
 
