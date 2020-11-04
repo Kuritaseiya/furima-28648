@@ -41,9 +41,9 @@ Things you may want to cover:
 
 |birthday|date|null :false|
 
-|has_many|item_id|
+has_many :items
 
-|has_one|buy_id|
+has_one :buys
 ## items
 
 |item_name|string|null :false|
@@ -51,6 +51,8 @@ Things you may want to cover:
 |category_id|integer|null :false|
 
 |prise|string|null :false|
+
+|Explanation|text|
 
 |product_condition_id|integer|null :false|
 
@@ -62,11 +64,11 @@ Things you may want to cover:
 
 |user|references|foreign_key :true|
 
-|belongs_to|user_id|
+belongs_to :users
 
-|has_one|live_id|
+has_one :lives
 
-|has_one|buy_id|
+has_one :buys
 
 ## lives
 
@@ -82,19 +84,19 @@ Things you may want to cover:
 
 |building_name|string|
 
-|item_id|references|foreign_key :true|
+|item|references|foreign_key :true|
 
-|belongs_to|item_id|
+belongs_to :items
 
 ## buys
 
-|user_id|references|foreign_key :true|
+|user|references|foreign_key :true|
 
-|item_id|references|foreign_key :true|
+|item|references|foreign_key :true|
 
-|belongs_to|user_id|
+belongs_to :users
 
-|belongs_to|item_id|
+belongs_to :items
 
 
 
