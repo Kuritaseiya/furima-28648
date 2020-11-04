@@ -43,14 +43,14 @@ Things you may want to cover:
 
 has_many :items
 
-has_one :buy
+has_many :buys
 ## items
 
 |item_name|string|null :false|
 
 |category_id|integer|null :false|
 
-|prise|string|null :false|
+|prise|integer|null :false|
 
 |Explanation|text|null :false|
 
@@ -84,7 +84,7 @@ has_one :buy
 
 |item|references|foreign_key :true|
 
-belongs_to :item
+belongs_to :buy
 
 ## buys
 
