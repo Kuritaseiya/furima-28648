@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2020-11-02T09:14:06.492Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="iRlFPw1e7u6DhthdVpRZ" version="13.6.5">
+<mxfile host="65bd71144e" modified="2020-11-04T03:05:01.662Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="R5Hujkd_dGGswms-bOLg" version="13.6.5">
     <diagram id="KGvRj4eY6lw9Z95KSoRp" name="ページ1">
         <mxGraphModel dx="547" dy="488" grid="1" gridSize="10" guides="0" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
@@ -21,9 +21,6 @@
                 </mxCell>
                 <mxCell id="16" value="購入記録" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="360" y="320" width="160" height="200" as="geometry"/>
-                </mxCell>
-                <mxCell id="17" value="&#10;・時間(time)&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="16" vertex="1">
-                    <mxGeometry y="26" width="160" height="174" as="geometry"/>
                 </mxCell>
                 <mxCell id="2" value="ユーザー情報" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="60" y="80" width="200" height="80" as="geometry"/>

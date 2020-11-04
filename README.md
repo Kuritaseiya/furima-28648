@@ -41,7 +41,9 @@ Things you may want to cover:
 
 |birthday|date|null :false|
 
+|has_many|item_id|
 
+|has_one|buy_id|
 ## items
 
 |item_name|string|null :false|
@@ -60,6 +62,12 @@ Things you may want to cover:
 
 |user|references|foreign_key :true|
 
+|belongs_to|user_id|
+
+|has_one|live_id|
+
+|has_one|buy_id|
+
 ## lives
 
 |postal_code|string|null :false|
@@ -76,11 +84,17 @@ Things you may want to cover:
 
 |item_id|references|foreign_key :true|
 
+|belongs_to|item_id|
+
 ## buys
 
 |user_id|references|foreign_key :true|
 
 |item_id|references|foreign_key :true|
+
+|belongs_to|user_id|
+
+|belongs_to|item_id|
 
 
 
