@@ -43,7 +43,7 @@ Things you may want to cover:
 
 has_many :items
 
-has_one :buys
+has_one :buy
 ## items
 
 |item_name|string|null :false|
@@ -52,7 +52,7 @@ has_one :buys
 
 |prise|string|null :false|
 
-|Explanation|text|
+|Explanation|text|null :false|
 
 |product_condition_id|integer|null :false|
 
@@ -64,11 +64,9 @@ has_one :buys
 
 |user|references|foreign_key :true|
 
-belongs_to :users
+belongs_to :user
 
-has_one :lives
-
-has_one :buys
+has_one :buy
 
 ## lives
 
@@ -86,7 +84,7 @@ has_one :buys
 
 |item|references|foreign_key :true|
 
-belongs_to :items
+belongs_to :item
 
 ## buys
 
@@ -94,9 +92,9 @@ belongs_to :items
 
 |item|references|foreign_key :true|
 
-belongs_to :users
+belongs_to :user
 
-belongs_to :items
+belongs_to :item
 
 
 
