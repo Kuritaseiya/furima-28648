@@ -9,9 +9,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :last_name,          null: false
       t.string :KANA_name,          null: false
       t.string :KANA_last_name,     null: false
-      t.string   :reset_password_token
-      t.datetime :reset_password_sent_at
-      t.datetime :remember_created_at
       t.date :birthday, null: false
 
       t.timestamps null: false
