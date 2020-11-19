@@ -29,7 +29,6 @@ RSpec.describe User, type: :model do
       another_user = build(:user, email: user.email)
       another_user.valid?
       expect(another_user.errors[:email]).to include("has already been taken")
-      #expect(user.errors.full_messages).to include("Email has already been taken")
     end
 
     it "emailに＠を含まない場合に新規登録できない" do
