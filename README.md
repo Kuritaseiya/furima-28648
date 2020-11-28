@@ -48,7 +48,7 @@ has_many :buys
 
 |name|string|null :false|
 
-|category_id|integer|null :false|
+|genre_id|integer|null :false|
 
 |prise|integer|null :false|
 
