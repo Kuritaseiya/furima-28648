@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
+    validates :image
     validates :name
     validates :explanation
     validates :genre_id
@@ -23,7 +24,7 @@ class Item < ApplicationRecord
     validates :guideline_id
   end
 
-  validates :price, :numericality => { :greater_than_or_equal_to => 300 }  # 数字が300以上であるか
-  validates :price, :numericality => { :less_than_or_equal_to => 9999999 }     # 数字が9999999以下であるか
+  validates :price, numericality: {greater_than_or_equal_to: 300}   # 数字が300以上であるか
+  validates :price, numericality: {less_than_or_equal_to: 9999999}      # 数字が9999999以下であるか
   #validates :prise, :format: { with: /\A[0-9]+\z/ }
 end

@@ -25,9 +25,9 @@ RSpec.describe Item, type: :model do
     end
 
     it "category_idが1の場合は出品できない" do
-      @item.category_id = "1"
+      @item.genre_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include("Category must be other than 1")
+      expect(@item.errors.full_messages).to include("Genre must be other than 1")
     end
 
     it "priceは半角数字のみ入力ができること" do
@@ -37,41 +37,46 @@ RSpec.describe Item, type: :model do
     end
 
     it "priceは300~9,999,999の間までしか数字を入力できない" do
-      @item.price = "100"
+      @item.price = 100
       @item.valid?
       expect(@item.errors.full_messages).to include( "Price must be greater than or equal to 300")
     end
 
     it "priceは300~9,999,999の間までしか数字を入力できない" do
-      @item.price = "10000000"
+      @item.price = 10000000
       @item.valid?
       expect(@item.errors.full_messages).to include( "Price must be less than or equal to 9999999")
     end
 
     it "product_condition_idが1の場合は出品できない" do
-      @item.product_condition_id = "1"
+      @item.product_condition_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include( "Product condition must be other than 1")
     end
 
     it "delivery_fee_idが1の場合は出品できない" do
-      @item.delivery_fee_id = "1"
+      @item.delivery_fee_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include(  "Delivery fee must be other than 1")
     end
 
     it "prefecture_idが1の場合は出品できない" do
-      @item.prefecture_id = "1"
+      @item.prefecture_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
     end
 
     it "guideline_idが1の場合は出品できない" do
-      @item.guideline_id = "1"
+      @item.guideline_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include( "Guideline must be other than 1")
     end
 
+    it "商品画像が添付されていない場合、出品できない" do
+      @item.image = nil
+      @item.valid?
+      expect(@item.errors.full_messages).to include( "Image can't be blank")
+    end
 
   end
 end
