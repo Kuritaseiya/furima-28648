@@ -2,6 +2,10 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
   belongs_to :user
+  belongs_to :delivery_fee
+  belongs_to :guideline
+  belongs_to :prefecture
+  belongs_to :product_condition
   has_one :buy
   has_one_attached :image
 
