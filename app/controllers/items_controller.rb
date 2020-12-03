@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  #before_action :authenticate_user!, only: [:show]
 
   def index
     @items = Item.order("created_at DESC")
@@ -15,6 +16,11 @@ class ItemsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @user= current_user
+    @items = Item.where(params[:id])
   end
 
   private
