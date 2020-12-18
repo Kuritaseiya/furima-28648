@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    #@buy = Buy.new(params[:buy_id])
     if @item.save
       redirect_to root_path
     else
@@ -21,6 +22,7 @@ class ItemsController < ApplicationController
 
   def show
     @user= current_user
+    set_item
   end
 
   def edit
@@ -44,7 +46,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:image,:name,:explanation,:genre_id,:product_condition_id,:delivery_fee_id,:prefecture_id,:guideline_id,:price).merge(user_id: current_user.id)
+    params.require(:item).permit(:image,:name,:explanation,:genre_id,:product_condition_id,:delivery_fee_id,:prefecture_id,:guideline_id,:price).merge(user_id: current_user.id, )
   end
 
   def set_item
