@@ -2,7 +2,7 @@ class BuysController < ApplicationController
   def index
     @form = Form.new
     @item = Item.find(params[:item_id],params[:user_id])
-    if (current_user == nil) || (current_user.id == @item.user.id) #ログインしていないユーザーもしくは出品者の場合
+    if (current_user == nil) || (current_user.id == @item.user.id) || (@item.buy)#ログインしていないユーザーもしくは出品者の場合もしくは購入済みの場合
       redirect_to root_path
     end
     #フォームオブジェクトのインスタンスを生成し、インスタンス変数に代入する
