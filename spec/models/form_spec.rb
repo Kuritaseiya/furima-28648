@@ -2,11 +2,18 @@ require 'rails_helper'
 
 RSpec.describe Form, type: :model do
   before do
-    @form = FactoryBot.build(:form)
+    user = FactoryBot.build(:user)
+    item = FactoryBot.build(:item)
+    @form = FactoryBot.build(:form, user_id: user.id , item_id: item.id)
   end
 
   describe '商品登録：正常系' do
     it "全ての欄を埋めて指定された条件を満たしている時" do
+      expect(@form).to be_valid
+    end
+
+    it "建物名がなくても保存ができる" do
+      @form.building_name = ""
       expect(@form).to be_valid
     end
   end
@@ -64,6 +71,18 @@ RSpec.describe Form, type: :model do
       @form.token = ""
       @form.valid?
       expect(@form.errors.full_messages).to include("Token can't be blank")
+    end
+
+    it "user_idがないと登録ができない" do
+      @form.user_id = ""
+      @form.valid?
+      expect(@form.errors.full_messages).to include("User can't be blank")
+    end
+
+    it "item_idがないと登録できない" do
+      @form.item_id = ""
+      @form.valid?
+      expect(@form.errors.full_messages).to include("Item can't be blank")
     end
 
   end

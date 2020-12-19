@@ -1,7 +1,7 @@
 class BuysController < ApplicationController
   def index
     @form = Form.new
-    @item = Item.find(params[:item_id],params[:user_id])
+    user_item
     if (current_user == nil) || (current_user.id == @item.user.id) || (@item.buy)#ログインしていないユーザーもしくは出品者の場合もしくは購入済みの場合
       redirect_to root_path
     end
@@ -9,7 +9,7 @@ class BuysController < ApplicationController
   end
 
   def create
-    @item = Item.find(params[:item_id],params[:user_id])
+    user_item
     @form = Form.new(buy_params)
     if @form.valid?
       pay_item
@@ -23,7 +23,6 @@ class BuysController < ApplicationController
   private
 
   def buy_params
-    #params.require(:form).permit(:postal_code, :prefecture_id, :municipality, :number, :phone_number, :building_name, :item_id, :user_id)
     params.require(:form).permit(:postal_code, :prefecture_id, :municipality, :number, :phone_number, :building_name, ).merge(token: params[:token], item_id: params[:item_id], user_id: current_user.id)
   end
 
@@ -35,6 +34,10 @@ class BuysController < ApplicationController
       card: buy_params[:token],    # カードトークン
       currency: 'jpy'                 # 通貨の種類（日本円）
     )
+  end
+
+  def user_item
+    @item = Item.find(params[:item_id],params[:user_id])
   end
 end
 
