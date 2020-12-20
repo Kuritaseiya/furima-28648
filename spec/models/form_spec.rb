@@ -2,12 +2,13 @@ require 'rails_helper'
 
 RSpec.describe Form, type: :model do
   before do
-    user = FactoryBot.build(:user)
-    item = FactoryBot.build(:item)
+    user = FactoryBot.create(:user)
+    item = FactoryBot.create(:item)
+    sleep(3)
     @form = FactoryBot.build(:form, user_id: user.id , item_id: item.id)
   end
 
-  describe '商品登録：正常系' do
+  describe '商品購入：正常系' do
     it "全ての欄を埋めて指定された条件を満たしている時" do
       expect(@form).to be_valid
     end
@@ -18,7 +19,7 @@ RSpec.describe Form, type: :model do
     end
   end
 
-  describe '商品登録:異常系' do
+  describe '商品購入:異常系' do
     it "郵便番号が空の場合" do
       @form.postal_code = ""
       @form.valid?
